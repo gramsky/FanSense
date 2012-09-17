@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" name="viewport" 
+        content="width=device-width, initial-scale=1"> 
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>  
+  <script src="http://www.kineticjs.com/download/kinetic-v4.0.1.min.js"></script>
+  <script src="./GraphicsFunc.js"></script>
+  <script src="./MotionFunc.js"></script>
+  <script src="./misc.js"></script>
+
+  <script type="text/javascript">
+    var seat=0,score=0,stage,layer;
+    var rainbow = [ ["darkred","darkorange","darkgoldenrod","darkgreen","darkblue","indigo","darkviolet"], 
+                    ["red","orange","yellow","green","blue","indigo","violet"],
+                    ["pink","peachpuff","gold","lightgreen","lightblue","indigo","thistle"]];
+    //var rainbow[1] = ["red","orange","yellow","lightgreen","blue","indigo","violet"];
+    
+    $(document).ready(function(){
+        init();
+        periodicCheck();
+        setInterval(periodicCheck,500);
+        $(window).bind("devicemotion", 
+           function(e){motionFunc(e);}
+        );
+    });
+  </script>
+</head>
+
+<body>
+  <div id="s"></div>
+  <div id="maincanvas"></div>
+</body>
+</html>
