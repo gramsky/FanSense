@@ -39,7 +39,6 @@ function detectShake(e){
     var deltaz = maxz-minz;
     var net = deltax+deltay+deltaz;
 
-    $(s).html(deltax + " " + deltay + " " + deltaz + "net is " + net);
     if(net > 35) {
        shaked=true;
     } 
